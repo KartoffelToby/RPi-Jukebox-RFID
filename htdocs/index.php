@@ -9,15 +9,34 @@ include("inc.header.php");
 html_bootstrap3_createHeader("en","Phoniebox",$conf['base_url']);
 
 ?>
+<style type="text/css">
+  .container {
+    width: 100% !important;
+    height: 100vh;
+    overflow: hidden;
+  }
+  div#coverWrapper {
+    right: 0;
+    position: absolute;
+    bottom: 0;
+  }
+  .row.playerControls {
+    height: 100vh;
+    margin-bottom: 0;
+  }
+  i.mdi, .mdi-48px.mdi-set, .mdi-48px.mdi:before, .mdi-24px.mdi-set, .mdi-24px.mdi:before {
+    font-size: 125px;
+  }
+  .btn-group.controlVolumeUpDown:nth-child(2) {
+    margin-left: -105px;
+  }
+</style>
 <body>
   <div class="container">
 
-<?php
-include("inc.navigation.php");
-?>
+
 
     <div class="row playerControls">
-      <div class="col-lg-12">
 <?php
 /*
 * Do we need to voice a warning here?
@@ -31,31 +50,17 @@ include("inc.controlPlayer.php");
 
 ?>
 
-      </div><!-- / .col-lg-12 -->
     </div><!-- /.row -->
 
-<?php
-// show currently played track
 
-    print '
-    <div class="row">
-        <div class="col-lg-12">';
-include("inc.loadedPlaylist.php");
-    print '
-        </div><!-- / .col-lg-12 -->
-    </div><!-- /.row -->';
-?>
     <div class="row">
       <div class="col-lg-12">
-<?php
-include("inc.setVolume.php");
-?>      
+   
     </div><!-- ./col-lg-12 -->
     </div><!-- ./row -->
 
     <div class="row">
       <div class="col-lg-12">
-        <h3><?php print $lang['indexAvailAudio']; ?></h3>
       <div class="row">
 <?php
 
@@ -88,18 +93,7 @@ foreach($audiofolders as $audiofolder) {
 ?>
 
       </div><!-- / .col-lg-12 -->
-        <!-- input-group -->          
-          <div class="col-md-4 col-sm-6">
-            <div class="row" style="margin-bottom:1em;">
-              <div class="col-xs-12">
-              <h4><?php print $lang['indexManageFilesChips']; ?></h4>
-                <a href="cardRegisterNew.php" class="btn btn-info btn">
-                <i class='mdi mdi-cards-outline'></i> <?php print $lang['globalRegisterCard']; ?>
-                </a>
-              </div>
-            </div><!-- ./row -->
-        </div><!-- ./col -->
-        <!-- /input-group --> 
+
 	      
     </div><!-- /.row -->
     

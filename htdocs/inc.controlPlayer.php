@@ -1,3 +1,8 @@
+<div id="controlWrapper">
+<?php
+    include('inc.loadControls.php');
+?>
+</div>
 <?php
 if($ShowCover == "ON") {
     echo '<div class="playerWrapperCover" id="coverWrapper">';
@@ -5,9 +10,3 @@ if($ShowCover == "ON") {
     echo '</div>';
 }
 ?>
-
-<div id="controlWrapper">
-<?php
-    include('inc.loadControls.php');
-?>
-</div>
